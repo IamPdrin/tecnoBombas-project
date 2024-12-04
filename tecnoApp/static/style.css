@@ -35,6 +35,22 @@ h2 {
     text-align: center;
 }
 
+.container {
+    width: 90%;
+    flex-wrap:wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Centraliza verticalmente usando a altura total da viewport */
+}
+
 .container-cards-wrapper {
     display: flex;
     justify-content: space-between;
@@ -346,7 +362,7 @@ hr {
     text-align: center;
 }
 
-body h1, h2, h3, p {
+body h1, h2, h4, p {
     color: white;
     font-family: 'Inter', sans-serif;
 }

@@ -14,7 +14,7 @@
             <h4>Cadastro do Equipamento</h4>
             <hr>
             
-            <form action="{% url 'add_equipamento'%}" method="post">
+            <form action="{% url 'add_equipamento'%}" method="post" enctype="multipart/form-data">
                 {% csrf_token %}
                 
                 <div class="input-group">
@@ -30,12 +30,14 @@
                 </div>
 
                 <div class="bt-and-text">
-                    <button type="submit" class="btphoto">
+                    <button type="submit" class="btphoto" onclick="document.getElementById('foto_input').click()">
                         <img src="{% static 'images/addimg.png' %}" alt="icone check" class="icon">
                     </button>
-                    <a href="#">Adicionar Imagem do produto</a>
+                    <a href="#" onclick="document.getElementById('foto_input').click(); return false;">Adicionar Imagem do produto</a>
                 </div>
 
+                <input type="file" id="foto_input" name="foto" accept="image/*" style="display: none;">
+                <br>
                 <button type="submit" class="bt">Cadastrar</button>
             </form>
         </div>

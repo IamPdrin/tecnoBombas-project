@@ -16,6 +16,8 @@ class Usuario(models.Model):
         ('PJ', 'Pessoa Jurídica'),
     ]
 
+    senha = models.CharField(max_length=16)
+
     nome = models.CharField(max_length=255)
     tipo = models.CharField(
         max_length=2,
@@ -37,7 +39,9 @@ class Usuario(models.Model):
     endereco = models.OneToOneField(
         Endereco,
         on_delete=models.CASCADE,
-        related_name="usuario"
+        related_name="usuario",
+        null=True,
+        blank=True,
     )
 
     def save(self, *args, **kwargs):
@@ -50,6 +54,8 @@ class Usuario(models.Model):
             raise ValueError("Usuários do tipo PF não devem ter um CNPJ.")
         if self.tipo == 'PJ' and self.cpf:
             raise ValueError("Usuários do tipo PJ não devem ter um CPF.")
+
+
         super().save(*args, **kwargs)
 
     def __str__(self):
@@ -65,7 +71,9 @@ class Equipamentos(models.Model):
     usuario = models.ForeignKey(
         Usuario,
         on_delete=models.CASCADE,
-        related_name='equipamentos'
+        related_name='equipamentos',
+        null=True,
+        blank=True,
     )
 
     def __str__(self):

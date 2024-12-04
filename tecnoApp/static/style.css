@@ -22,6 +22,22 @@ main {
     width: 100%;
 }
 
+.alert-success {
+    color: green;
+    background-color: #d4edda;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.alert-error {
+    color: red;
+    background-color: #f8d7da;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
 form {
     background-color: #191D61;
     padding: 20px;
@@ -35,6 +51,15 @@ h2 {
     text-align: center;
 }
 
+.container-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    height: 100vh;
+}
+
 .container {
     width: 90%;
     flex-wrap:wrap;
@@ -42,7 +67,6 @@ h2 {
     margin: 0 auto;
     padding: 0 20px;
 }
-
 
 .center-container {
     display: flex;

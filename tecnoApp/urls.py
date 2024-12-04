@@ -4,6 +4,8 @@ from . import views
 urlpatterns = [
     path('', views.landing_page, name="landing_page"),
     path('main', views.principal, name="principal"),
+    path('login', views.fazerLogin, name="fazerLogin"),
+    path('criar-login', views.criarLogin, name='criarLogin'),
 
     path('adicionar-equip', views.add_equipamento, name="add_equipamento"),
     path('editar/<int:id_equipamento>', views.edt_equipamento, name="edt_equipamento"),

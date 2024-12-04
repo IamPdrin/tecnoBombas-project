@@ -8,28 +8,29 @@
 {% block titulo %} Tela Principal {% endblock %}
 
 {% block conteudo %}
-<div class="container">
-    <div class="container-card">
-        <div class="img-card">
-            <img src="{% static 'images/logo.png'%}" alt="Logo TecnoBombas">
-        </div>
-        <div class="body-card">
-            <h1>Equipamentos</h1>
-            <a href="{% url 'add_equipamento' %}" class="btn btn-success"><b>Adicionar Equipamento</b></a>
-            <br>
-            <table>
-                {% for equip in equipamentos %}
-                <tr>
-                    <td><h2>{{equip.id}}</h2></td>
-                    <td><h2>{{equip.nome}}</h2></td>
 
-                    <td><a href="{% url 'excluir_equipamento' equip.id %}" class="btn btn-danger">Excluir</a></td>
-                    <td><a href="{% url 'edt_equipamento' equip.id %}" class="btn btn-warning">Editar</a></td>
-                </tr>
-                {% endfor %}
-            </table>
+<div class="container-body">
+        <div class="container-card">
+            <div class="img-card">
+                <img src="{% static 'images/logo.png'%}" alt="Logo TecnoBombas">
+            </div>
+            <div class="body-card">
+                <h1>Equipamentos</h1>
+                <a href="{% url 'add_equipamento' %}" class="btn btn-success"><b>Adicionar Equipamento</b></a>
+                <br>
+                <table>
+                    {% for equip in equipamentos %}
+                    <tr>
+                        <td><h2>{{equip.id}}</h2></td>
+                        <td><h2>{{equip.nome}}</h2></td>
+
+                        <td><a href="{% url 'excluir_equipamento' equip.id %}" class="btn btn-danger">Excluir</a></td>
+                        <td><a href="{% url 'edt_equipamento' equip.id %}" class="btn btn-warning">Editar</a></td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
         </div>
-    </div>
 
     <br>
 

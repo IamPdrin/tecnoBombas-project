@@ -98,15 +98,24 @@ h2 {
 }
 /*-------------------------------*/
 
+
 .circle {
-    width: 175px;
-    height: 175px;
+    width: 2000px; /* Tamanho do círculo */
+    height: 200px; /* Tamanho do círculo */
+    border-radius: 50%; /* Torna o contêiner circular */
+    overflow: hidden; /* Impede que a imagem saia do círculo */
+    border: 2px solid #ccc; /* Borda opcional para destacar o círculo */
+    display: flex;
+    justify-content: center; /* Centraliza a imagem dentro do círculo */
+    align-items: center; /* Alinha a imagem no centro */
+    flex-direction: column;
+    margin: 0 auto; /* Centraliza o círculo dentro do contêiner */
     background-color: #e6e6e6;
-    border-radius: 50%;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     align-self: center;
     cursor: pointer;
 }
+
 
 .circle img {
     width: 35%;
